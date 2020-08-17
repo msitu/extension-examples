@@ -9,7 +9,7 @@ import { ILauncher } from '@jupyterlab/launcher';
 
 import { reactIcon } from '@jupyterlab/ui-components';
 
-import { CounterWidget } from './widget';
+import { TifViewerWidget } from './widget';
 
 /**
  * The command IDs used by the react-widget plugin.
@@ -34,8 +34,8 @@ const extension: JupyterFrontEndPlugin<void> = {
       label: 'React Widget',
       icon: args => (args['isPalette'] ? null : reactIcon),
       execute: () => {
-        const content = new CounterWidget();
-        const widget = new MainAreaWidget<CounterWidget>({ content });
+        const content = new TifViewerWidget();
+        const widget = new MainAreaWidget<TifViewerWidget>({ content });
         widget.title.label = 'React Widget';
         app.shell.add(widget, 'main');
       }
